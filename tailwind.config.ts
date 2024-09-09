@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import colors from "tailwindcss/colors";
 
 const config: Config = {
   content: [
@@ -8,10 +9,20 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        primary: {
+          light: colors.indigo[300], // Light shade of Tailwind's Indigo
+          DEFAULT: colors.indigo[500], // Default Tailwind Indigo
+          dark: colors.indigo[900], // Dark shade of Tailwind's Indigo
+        },
+        background: {
+          DEFAULT: colors.slate[900], // Dark background color
+          card: colors.slate[800], // Slightly lighter for cards
+        },
+        text: {
+          light: colors.gray[400], // Light gray for secondary text
+          primary: colors.white, // White for primary text
+        },
       },
     },
   },
